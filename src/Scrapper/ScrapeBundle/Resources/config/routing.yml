@@ -1,0 +1,3 @@
+scrapper_scrape_homepage:
+    path:     /desura
+    defaults: { _controller: ScrapperScrapeBundle:Default:index }

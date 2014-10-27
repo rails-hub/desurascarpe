@@ -1,0 +1,4 @@
+scrapper_scrape:
+    resource: "@ScrapperScrapeBundle/Resources/config/routing.yml"
+    prefix:   /
+

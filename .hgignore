@@ -1,0 +1,15 @@
+#OS junk files
+[Tt]humbs.db
+.DS_Store
+
+#Project files
+[Uu]ploads/
+[Dd]b_dump/
+[Ll]ogs/
+[Bb]uild_images/
+[Aa]vatars/
+[Ss]upport/
+.[Ii]dea/
+[Cc]ache/
+# Office Temp Files
+~$

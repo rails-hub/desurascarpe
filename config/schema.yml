@@ -1,0 +1,40 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  developer:
+    _attributes: { phpName: Developer }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '255', required: true }
+    created_at: { phpName: CreatedAt, type: TIMESTAMP, required: false }
+    updated_at: { phpName: UpdatedAt, type: TIMESTAMP, required: false }
+  game:
+    _attributes: { phpName: Game }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '255', required: true }
+    image: { phpName: Image, type: VARCHAR, size: '255', required: true }
+    price: { phpName: Price, type: VARCHAR, size: '255', required: true }
+    developer_id: { phpName: DeveloperId, type: INTEGER, size: '11', required: true, foreignTable: developer, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    game_id: { phpName: GameId, type: INTEGER, size: '11', required: true }
+    game_name: { phpName: GameName, type: VARCHAR, size: '255', required: true }
+    created_at: { phpName: CreatedAt, type: TIMESTAMP, required: false }
+    updated_at: { phpName: UpdatedAt, type: TIMESTAMP, required: false }
+    _indexes: { game_FI_1: [developer_id] }
+  avatar:
+    _attributes: { phpName: Avatar }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '255', required: true }
+    image: { phpName: Image, type: VARCHAR, size: '255', required: true }
+    game_id: { phpName: GameId, type: INTEGER, size: '11', required: true, foreignTable: game, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    created_at: { phpName: CreatedAt, type: TIMESTAMP, required: false }
+    updated_at: { phpName: UpdatedAt, type: TIMESTAMP, required: false }
+    _indexes: { game_FI_1: [game_id] }
+  video:
+    _attributes: { phpName: Video }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '255', required: true }
+    link: { phpName: Image, type: VARCHAR, size: '255', required: true }
+    game_id: { phpName: GameId, type: INTEGER, size: '11', required: true, foreignTable: game, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    created_at: { phpName: CreatedAt, type: TIMESTAMP, required: false }
+    updated_at: { phpName: UpdatedAt, type: TIMESTAMP, required: false }
+    _indexes: { game_FI_1: [game_id] }
